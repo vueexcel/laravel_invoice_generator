@@ -12,7 +12,6 @@ class EmailController extends Controller
     {
         $request->validate([
             'to' => 'required|email',
-           
         ]);
         $attachment = $request->file('attachment')->store('pdf_attachments', 'public');
         $attachmentPath=storage_path('app/public/'.$attachment);
